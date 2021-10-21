@@ -1,0 +1,160 @@
+_type: export
+__export_format: 4
+__export_date: 2021-10-21T17:42:21.775Z
+__export_source: insomnia.desktop.app:v2021.5.3
+resources:
+  - _id: req_4297571bd1be4ab5b0f1ea17b68fb39c
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634838088933
+    created: 1634837959156
+    url: "{{ _.baseURL }}/profile"
+    name: Profile User
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1634837959156
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_a723ab81496942a29b30a6d008d0d01b
+    parentId: null
+    modified: 1634758241018
+    created: 1634758241018
+    name: NLW Heat
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_cbff59df694a4573a5e34f52da476cf1
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634837621985
+    created: 1634837611408
+    url: "{{ _.baseURL }}/messages/last3"
+    name: Get 3 last messages
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1634837611408
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dd689c1c84f440939664accd9f91328b
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634838092889
+    created: 1634761891598
+    url: "{{ _.baseURL }}/messages"
+    name: Create Message
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"message": "Opa"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_fe87169bfc55496a81b8e3e2df452291
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1634761891598
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2ea5081c9ed04057be5eeaf57b38040f
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634762274908
+    created: 1634758306900
+    url: "{{ _.baseURL }}/authenticate"
+    name: Authenticate User
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"code": "7ffd649c8d7d4e2c5219"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f8f0d8927fad42149f8e86250b83e94c
+    authentication: {}
+    metaSortKey: -1634758306900
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_4a921cd88b15cb36312f631c734f4c697862929d
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634758241024
+    created: 1634758241024
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1634758241024
+    _type: environment
+  - _id: jar_4a921cd88b15cb36312f631c734f4c697862929d
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634758241026
+    created: 1634758241026
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_1faa5e07726f462abcba333abc513c47
+    parentId: wrk_a723ab81496942a29b30a6d008d0d01b
+    modified: 1634758241021
+    created: 1634758241021
+    fileName: NLW Heat
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_5258415eac56477ea80cf949c56ba044
+    parentId: env_4a921cd88b15cb36312f631c734f4c697862929d
+    modified: 1634838080113
+    created: 1634758247704
+    name: local
+    data:
+      baseURL: http://localhost:4000
+      token: "{% response 'body', 'req_2ea5081c9ed04057be5eeaf57b38040f',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    dataPropertyOrder:
+      "&":
+        - baseURL
+        - token
+    color: "#7d69cb"
+    isPrivate: false
+    metaSortKey: 1634758247704
+    _type: environment
